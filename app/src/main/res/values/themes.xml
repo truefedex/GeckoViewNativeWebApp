@@ -1,0 +1,8 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme. -->
+    <style name="Theme.GeckoViewNativeWebApp" parent="android:Theme.Material.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="android:colorPrimary">@color/purple_500</item>
+        <item name="android:colorSecondary">@color/teal_200</item>
+    </style>
+</resources>

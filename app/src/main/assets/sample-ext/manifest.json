@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "sample-extension",
+  "version": "1.0",
+  "description": "Sample extension",
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "sample@mock.com"
+    }
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "file://*/*"
+      ],
+      "js": [
+        "communicate.js"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "scripts": [
+      "background.js"
+    ]
+  },
+  "permissions": [
+    "nativeMessaging",
+    "nativeMessagingFromContent",
+    "geckoViewAddons",
+    "webRequest",
+    "webRequestBlocking",
+    "tabs",
+    "webNavigation",
+    "<all_urls>"
+  ]
+}
