@@ -1,16 +1,17 @@
+import org.jetbrains.kotlin.gradle.dsl.JvmTarget
+
 plugins {
     id 'com.android.application'
-    id 'org.jetbrains.kotlin.android'
 }
 
 android {
     namespace 'com.example.geckoviewnativewebapp'
-    compileSdk 33
+    compileSdk 36
 
     defaultConfig {
         applicationId "com.example.geckoviewnativewebapp"
-        minSdk 25
-        targetSdk 33
+        minSdk 26
+        targetSdk 36
         versionCode 1
         versionName "1.0"
     }
@@ -28,12 +29,17 @@ android {
         sourceCompatibility JavaVersion.VERSION_11
         targetCompatibility JavaVersion.VERSION_11
     }
-    kotlinOptions {
-        jvmTarget = '1.8'
+}
+
+kotlin {
+    compilerOptions {
+        jvmTarget.set(JvmTarget.JVM_11)
+        allWarningsAsErrors.set(true)
+        freeCompilerArgs.add("-Xjsr305=strict")
     }
 }
 
 dependencies {
-    def geckoViewVersion = "112.0.20230406114409"
+    def geckoViewVersion = "147.0.20260212191108"
     implementation "org.mozilla.geckoview:geckoview:$geckoViewVersion"
 }
